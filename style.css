@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+:root {
+  --footer-bg: hsl(217, 19%, 35%);
+  --share-bg: hsl(212, 23%, 69%);
+  --share-on-footer: hsl(214, 17%, 51%);
+  --container-bg: hsl(210, 46%, 95%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+}
+div.container {
+  background: var(--container-bg);
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+}
+div.child-container {
+  width: 46.5%;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 20px;
+  position: relative;
+}
+div.left-image {
+  height: auto;
+  background-image: url("./images/drawers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+div.right-container {
+  border-radius: 0 10px 10px 0;
+  padding: 20px 30px;
+  background: #fff;
+  color: var(--footer-bg);
+  display: grid;
+  position: relative;
+  gap: 20px;
+}
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 13px;
+  color: var(--share-bg);
+}
+div.container-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+div.user-info object {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+div.user-name {
+  display: grid;
+  gap: 2px;
+}
+div.user-name h3 {
+  font-size: 13px;
+}
+div.user-name p {
+  word-spacing: 3px;
+}
+div.container-info i {
+  background: var(--container-bg);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+div.share-button,
+i,
+object {
+  cursor: pointer;
+}
+
+footer.footer {
+  display: none;
+}
+
+footer.desktop {
+  display: flex;
+  position: absolute;
+  bottom: 4.65rem;
+  right: -4.5rem;
+  margin: auto;
+  background: var(--footer-bg);
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+  height: 20%;
+}
+footer.desktop::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom: 0;
+  border-top: 20px solid var(--footer-bg);
+}
+
+footer.desktop > i {
+  position: absolute;
+  bottom: -3.2rem;
+}
+footer.mobile {
+  position: absolute;
+  bottom: 0;
+  background: var(--footer-bg);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  padding: 20px 30px;
+  width: 100%;
+  display: flex;
+}
+
+footer p {
+  font-size: initial;
+  letter-spacing: 0.5rem;
+}
+footer div.user-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer div.user-name > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div.user-name object {
+  width: 100%;
+  height: 100%;
+  border-radius: unset;
+}
+footer > i {
+  background: var(--share-bg);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+footer > i object {
+  filter: brightness(0) invert();
+}
+
+@media screen and (max-width: 1050px) {
+  div.child-container {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 750px) {
+  div.child-container {
+    width: 100%;
+    padding: 20px;
+    grid-template-columns: auto;
+  }
+  div.left-image {
+    height: 30vh;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  div.right-container {
+    border-radius: 0 0 10px 10px;
+    position: relative;
+  }
+}
+@media screen and (max-width: 350px) {
+  footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  footer div.user-info {
+    display: flex;
+    flex-flow: wrap column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
